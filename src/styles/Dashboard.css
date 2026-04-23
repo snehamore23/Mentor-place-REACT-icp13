@@ -1,39 +1,20 @@
 .dashboard {
-  padding: 30px;
-  min-height: 90vh;
+  min-height: 100vh;
+  padding: 40px;
   background: linear-gradient(135deg, #4facfe, #00f2fe);
+  text-align: center;
 }
 
-.dashboard-title {
-  font-size: 30px;
+.title {
   color: white;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  font-size: 32px;
 }
 
-.card-container {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.dashboard-buttons {
-  margin-top: 30px;
-}
-
-.btn {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
-  margin-right: 15px;
-  cursor: pointer;
-}
-
-.btn-blue {
-  background: #007bff;
-  color: white;
-}
-
-.btn-purple {
-  background: #6f42c1;
-  color: white;
+/* Grid Layout */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  justify-items: center;
 }
