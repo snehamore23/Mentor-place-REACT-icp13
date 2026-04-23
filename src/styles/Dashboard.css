@@ -1,20 +1,64 @@
+/* 🌈 Background + Layout */
 .dashboard {
   min-height: 100vh;
   padding: 40px;
-  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  background: linear-gradient(135deg, #667eea, #764ba2);
   text-align: center;
+  font-family: "Segoe UI", sans-serif;
 }
 
+/* 🧠 Title */
 .title {
   color: white;
-  margin-bottom: 40px;
   font-size: 32px;
+  margin-bottom: 40px;
 }
 
-/* Grid Layout */
-.card-grid {
+/* 📊 Grid Layout */
+.grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 25px;
-  justify-items: center;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* 🃏 Card Design */
+.card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 18px;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+/* ✨ Hover Animation */
+.card:hover {
+  transform: translateY(-10px) scale(1.05);
+  background: white;
+  color: #333;
+}
+
+/* 🔘 Click Effect */
+.card:active {
+  transform: scale(0.98);
+}
+
+/* 📌 Icon */
+.icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+/* 📝 Text */
+.card h2 {
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 14px;
+  opacity: 0.8;
 }
