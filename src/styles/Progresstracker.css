@@ -363,7 +363,7 @@ body {
 .gradient-bg-blue {
   background: linear-gradient(135deg, #e0f2fe 0%, #cffafe 100%);
   border: none;
-  box-shadow: 0 10px 30px rgba(3, 102, 214, 0.15);
+  box-shadow: 0 10px 30px rgba(4, 92, 193, 0.15);
 }
 
 .badge-success {
