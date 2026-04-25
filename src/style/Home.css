@@ -49,3 +49,10 @@
   color: #22c55e;
   margin-left: 8px;
 }
+
+.subtext {
+  text-align: center;
+  color: #666;
+ 
+  margin-top: 10px;
+}
