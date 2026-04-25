@@ -13,3 +13,26 @@ function FeatureCard({ title, desc, icon }) {
 
 export default function Home() {
   const navigate = useNavigate();
+
+  const features = [
+    {
+      title: "Resume Analyzer",
+      desc: "Improve your resume with smart suggestions.",
+      icon: "📄",
+    },
+    {
+      title: "Placement Preparation",
+      desc: "Prepare aptitude, coding & interviews.",
+      icon: "📚",
+    },
+    {
+      title: "Mock Interview",
+      desc: "Practice real interview scenarios.",
+      icon: "🎤",
+    },
+    {
+      title: "Progress Tracker",
+      desc: "Track your performance and growth.",
+      icon: "📊",
+    },
+  ];
