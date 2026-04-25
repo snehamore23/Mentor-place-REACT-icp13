@@ -56,3 +56,20 @@
  
   margin-top: 10px;
 }
+
+.intro {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.intro-content {
+  max-width: 800px; /* 🔥 important fix */
+  margin: 0 auto;   /* center */
+  margin-top: 30px;
+}
+
+.intro-content p {
+  margin-top: 12px;
+  line-height: 1.7; /* spacing fix */
+  color: #444;
+}
