@@ -20,7 +20,7 @@ body {
   background-color: var(--bg-color);
   color: var(--text-primary);
   font-family: 'Inter', -apple-system, sans-serif;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .proper-tracker-container {
@@ -37,7 +37,7 @@ body {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px;
+  padding: 41px;
   padding-top: 20px;
 }
 
