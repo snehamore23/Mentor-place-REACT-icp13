@@ -47,7 +47,7 @@ export default function Home() {
         <div className="btn-container">
         <button
           className="btn primary"
-          onClick={() => navigate("/dashboard")}
+          onClick={() => navigate("/Login")}
         >
           Get Started
         </button>
