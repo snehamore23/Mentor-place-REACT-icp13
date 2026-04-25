@@ -14,3 +14,26 @@
   font-size: 48px;
   font-weight: 700;
 }
+
+.btn {
+  margin-top: 20px;
+  padding: 8px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-block;
+  width:auto;
+  min-width: 120px;
+  max-width: fit-content;
+}
+
+.btn-container{
+  display: flex;
+  justify-content: center;
+}
+
+.primary {
+  background: #22c55e;
+  color: white;
+}
