@@ -88,3 +88,33 @@ export default function Login() {
             />
             {errors.email && <p className="error">{errors.email}</p>}
           </div>
+
+          <div className="input-group">
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={form.password}
+              onChange={handleChange}
+            />
+            {errors.password && <p className="error">{errors.password}</p>}
+          </div>
+
+          <button type="submit" className="btn">
+            {isSignup ? "Sign Up" : "Login"}
+          </button>
+        </form>
+
+        {/* TOGGLE */}
+        <p className="toggle">
+          {isSignup ? "Already have an account?" : "Don't have an account?"}
+          <span onClick={() => setIsSignup(!isSignup)}>
+            {isSignup ? " Login" : " Sign Up"}
+          </span>
+        </p>
+
+      </div>
+
+    </div>
+  );
+}
