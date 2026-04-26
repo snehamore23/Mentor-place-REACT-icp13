@@ -43,7 +43,7 @@ function App() {
               : <Navigate to="/" />
           } />
           <Route path="/mock" element={<MockInterview />} />
-          <Route path="/profile" element={<Profile form={form} setForm={setForm} />} />
+          <Route path="/profile" element={<Profile form={form} setForm={setForm} completed={completed} />} />
           <Route path="/resources" element={<Resources form={form} />} />
           <Route path="/resources/interview-tips" element={<InterviewTips form={form} />} />
           <Route path="/resources/aptitude" element={<AptitudePractice form={form} />} />
