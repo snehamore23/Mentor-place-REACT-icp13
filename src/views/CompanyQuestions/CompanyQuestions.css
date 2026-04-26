@@ -13,6 +13,7 @@ body {
   margin-top: 30px;
   background: linear-gradient(to right, #ff9a9e, #fad0c4);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -50,6 +51,9 @@ body {
   padding: 2px;
   background: linear-gradient(45deg, #ff00cc, #3333ff);
   -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask:
     linear-gradient(#000 0 0) content-box,
     linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
