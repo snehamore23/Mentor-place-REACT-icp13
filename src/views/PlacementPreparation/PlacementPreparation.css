@@ -36,3 +36,25 @@
   text-align: center;
   flex-shrink: 0;            
 }
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+/* title */
+.card h2 {
+  margin-bottom: 10px;
+  color: #2563eb;
+}
+
+/* description */
+.card p {
+  font-size: 14px;
+  color: #555;
+}
+
+
+.card-container::-webkit-scrollbar {
+  display: none;
+}
