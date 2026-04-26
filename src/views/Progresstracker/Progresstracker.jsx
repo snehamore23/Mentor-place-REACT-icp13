@@ -102,3 +102,16 @@ const Progresstracker = () => {
               </div>
             </div>
           </section>
+{/* Milestones Table */}
+          <section className="card roadmap-card">
+            <div className="card-header">
+              <h2>📍 Detailed Milestones</h2>
+              <span className="card-subtitle">{items.length} milestones tracked</span>
+            </div>
+
+            <div className="milestones-table">
+              <div className="table-header">
+                <span>Milestone</span>
+                <span>Activity</span>
+                <span>Status</span>
+              </div>
