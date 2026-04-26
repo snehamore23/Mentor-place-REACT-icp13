@@ -73,3 +73,5 @@ function PlacementPreparation() {
     </div>
   );
 }
+
+export default PlacementPreparation;
