@@ -16,7 +16,7 @@ import Community       from "./views/Community/Community";
 import PlacementPrepration from "./views/PlacementPrepration/PlacementPrepration";
 import ResumeUpload    from "./views/ResumeUpload/Resumeupload";
 import ResumeAnalysis  from "./views/ResumeAnalysis/ResumeAnalysis";
-import CompanyQuestions from "./views/CompanyQuestions/CompanyQuestions";
+import CompanyQuestions from "./views/CompanyQuestion/CompanyQuestion";
 
 /* ── Default user (auto-logged in for demo) ── */
 const DEFAULT_USER = {
@@ -95,11 +95,18 @@ export default function App() {
           <Route path="/community" element={
             <Protected form={form}><Community form={form} onLogout={onLogout} /></Protected>
           } />
-          <Route path="/mock"    element={<MockInterview />} />
-          <Route path="/prep"    element={<PlacementPrepration />} />
-          <Route path="/upload"  element={<ResumeUpload />} />
-          <Route path="/resume-analysis" element={<ResumeAnalysis />} />
-          <Route path="/company-questions" element={<CompanyQuestions />} />
+          <Route path="/mock"    element={
+            <Protected form={form}><MockInterview form={form} onLogout={onLogout} /></Protected>
+          } />
+          <Route path="/upload"  element={
+            <Protected form={form}><ResumeUpload form={form} onLogout={onLogout} /></Protected>
+          } />
+          <Route path="/resume-analysis" element={
+            <Protected form={form}><ResumeAnalysis form={form} onLogout={onLogout} /></Protected>
+          } />
+          <Route path="/company-questions" element={
+            <Protected form={form}><CompanyQuestions form={form} onLogout={onLogout} /></Protected>
+          } />
           <Route path="/progress" element={<Placeholder name="📊 Progress Tracker" />} />
           <Route path="/career"   element={<Placeholder name="🚀 Career Guidance" />} />
           <Route path="*"         element={<Navigate to="/" replace />} />

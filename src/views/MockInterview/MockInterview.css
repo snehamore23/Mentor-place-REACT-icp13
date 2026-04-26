@@ -1,5 +1,13 @@
-/* ── Page ── */
-.container {
+.mi-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+.mi-subtitle {
+  font-size: 15px;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+}
   min-height: 100vh;
   background: var(--bg);
   font-family: var(--font);
