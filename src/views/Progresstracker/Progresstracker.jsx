@@ -138,4 +138,17 @@ const Progresstracker = () => {
                         </div>
                       </div>
                     </div>
-                  
+                   <div className="col-date">{item.date}</div>
+
+                    <div className="col-progress">
+                      <div className="mini-progress-group">
+                        <div className="mini-bar-base">
+                          <div
+                            className="mini-bar-fill-proper"
+                            style={{
+                              width: `${item.progress}%`,
+                              backgroundColor: item.color,
+                              transition: "width 0.6s ease"
+                            }}
+                          ></div>
+                        </div>
