@@ -172,4 +172,19 @@ const Navbar = ({ form, onLogout, onProfileClick }) => {
                   <p className="nb-um-branch">{form.branch} · {form.year}</p>
                 </div>
               </div>
-              
+              <hr className="nb-um-divider" />
+              <button className="nb-um-item" onClick={() => { close(); onProfileClick(); }}>👤 View Profile</button>
+              <button className="nb-um-item" onClick={() => go("/resources")}>📚 Resources</button>
+              <button className="nb-um-item" onClick={() => go("/progress")}>📊 My Progress</button>
+              <hr className="nb-um-divider" />
+              <button className="nb-um-item nb-um-logout" onClick={() => { close(); onLogout(); }}>🚪 Logout</button>
+            </div>
+          )}
+        </div>
+
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
