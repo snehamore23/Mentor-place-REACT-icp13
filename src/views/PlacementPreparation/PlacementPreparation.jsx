@@ -5,7 +5,11 @@ function PlacementPreparation() {
   const navigate = useNavigate();
 
  const cards = [
-
+{
+      title: "DSA",
+      desc: "Data Structures & Algorithms (Core for coding)",
+      path: "/dsa",
+    },
  ];
 
  return (
