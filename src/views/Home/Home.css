@@ -2,11 +2,14 @@
 
 .home {
   min-height: 100vh;
-  background: var(--page-bg, linear-gradient(160deg, #0f0c29 0%, #302b63 50%, #24243e 100%));
-  font-family: 'Inter', sans-serif;
-  color: var(--text-primary, white);
+  background: linear-gradient(160deg, #0d1117 0%, #161b22 50%, #0d1117 100%);
+  font-family: var(--font);
+  color: var(--text);
   overflow-x: hidden;
   transition: background 0.3s;
+}
+[data-theme="light"] .home {
+  background: linear-gradient(160deg, #f0f4ff 0%, #e8f0fe 50%, #f6f8fa 100%);
 }
 
 /* ── Navbar ── */
