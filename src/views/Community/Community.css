@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
-.cm-page { min-height: 100vh; background: var(--wp-bg); font-family: 'Inter', 'Segoe UI', sans-serif; transition: background 0.3s; }
+.cm-page { min-height: 100vh; background: var(--bg); font-family: var(--font); }
 
 /* ── Toast ── */
 .cm-toast {
