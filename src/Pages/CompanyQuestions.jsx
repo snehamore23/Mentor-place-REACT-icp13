@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../style/cq.css";
+import "../styles/CompanyQuestions.css";
 
 
 const CompanyQuestions = () => {
