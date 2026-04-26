@@ -64,3 +64,12 @@ const Progresstracker = () => {
               <span className="stat-label">Completed</span>
               <span className="stat-value">{completedCount}/{items.length}</span>
             </div>
+            </div>
+          <div className="stat-card stat-card-warning">
+            <div className="stat-icon">⏳</div>
+            <div className="stat-content">
+              <span className="stat-label">In Progress</span>
+              <span className="stat-value">{inProgressCount}</span>
+            </div>
+          </div>
+        </div>
