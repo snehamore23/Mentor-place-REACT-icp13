@@ -1,0 +1,38 @@
+/* full page */
+.container {
+  text-align: center;
+  padding: 30px;
+  min-height: 100vh;
+  background: #eef7ff;
+}
+
+/* heading */
+.container h1 {
+  color: #1e3a8a;
+  margin-bottom: 30px;
+}
+
+
+.card-container {
+  display: flex;
+  justify-content: center;   /* center */
+  align-items: center;
+  gap: 25px;
+
+  flex-wrap: nowrap;         
+  overflow-x: auto;          
+  padding-bottom: 10px;
+}
+
+/* card */
+.card {
+  min-width: 260px;          
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  flex-shrink: 0;            
+}
