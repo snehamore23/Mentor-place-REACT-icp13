@@ -50,3 +50,17 @@ const Progresstracker = () => {
           <h1>🚀 My Placement Journey</h1>
           <p>Monitor your preparation status and upcoming milestones with ease.</p>
         </div>
+        <div className="stats-container">
+          <div className="stat-card stat-card-primary">
+            <div className="stat-icon">📊</div>
+            <div className="stat-content">
+              <span className="stat-label">Overall Progress</span>
+              <span className="stat-value">{displayProgress}%</span>
+            </div>
+          </div>
+          <div className="stat-card stat-card-success">
+            <div className="stat-icon">✅</div>
+            <div className="stat-content">
+              <span className="stat-label">Completed</span>
+              <span className="stat-value">{completedCount}/{items.length}</span>
+            </div>
