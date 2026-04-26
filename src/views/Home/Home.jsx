@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import "../styles/Home.css";
-import FloatingThemeToggle from "../Components/FloatingThemeToggle";
+import "./Home.css";
+import FloatingThemeToggle from "../../Components/FloatingThemeToggle/FloatingThemeToggle";
 
 const features = [
   { icon: "📄", title: "Resume Upload",         desc: "Upload & get AI-powered resume analysis and improvement tips." },

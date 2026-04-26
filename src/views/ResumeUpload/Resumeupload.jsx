@@ -24,7 +24,7 @@ const ResumeUpload = () => {
       ]
     };
 
-    navigate("/analysis", { state: data });
+    navigate("/resume-analysis", { state: data });
   };
 
   return (

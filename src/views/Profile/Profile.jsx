@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import "../styles/Profile.css";
-import Navbar from "../Components/Navbar";
-import Footer from "../Components/Footer";
+import "./Profile.css";
+import Navbar from "../../Components/Navbar/Navbar";
+import Footer from "../../Components/Footer/Footer";
 
 const allFeatures = [
   { title: "Resume Upload",         icon: "📄", key: "resume",    score: 15 },

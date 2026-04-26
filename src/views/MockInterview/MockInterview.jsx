@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../styles/Mockinterview.css";
+import "./MockInterview.css";
 
 const categories = [
   { name: "Aptitude 🧠", key: "aptitude", subtitle: "Logic, math, and reasoning" },

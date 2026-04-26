@@ -1,4 +1,8 @@
-<div>
-  <h1>Placement</h1>
-  <p>This is the profile page.</p>
-</div>
+const PlacementPrepration = () => (
+  <div style={{ textAlign: "center", padding: "60px", color: "white" }}>
+    <h1>📚 Placement Preparation</h1>
+    <p>Coming soon — structured study plans for campus placements.</p>
+  </div>
+);
+
+export default PlacementPrepration;

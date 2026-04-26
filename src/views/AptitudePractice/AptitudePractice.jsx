@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Navbar from "../Components/Navbar";
-import Footer from "../Components/Footer";
-import "../styles/AptitudePractice.css";
+import Navbar from "../../Components/Navbar/Navbar";
+import Footer from "../../Components/Footer/Footer";
+import "./AptitudePractice.css";
 
 const topics = [
   { icon: "🔢", title: "Quantitative Aptitude", count: 8, subtopics: ["Number System", "Percentages", "Profit & Loss", "Time & Work", "Speed & Distance", "Simple & Compound Interest", "Ratio & Proportion", "Averages"] },

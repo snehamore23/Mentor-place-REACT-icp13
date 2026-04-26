@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Navbar from "../Components/Navbar";
-import Footer from "../Components/Footer";
-import "../styles/InterviewTips.css";
+import Navbar from "../../Components/Navbar/Navbar";
+import Footer from "../../Components/Footer/Footer";
+import "./InterviewTips.css";
 
 const categories = [
   {

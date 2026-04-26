@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/Community.css";
-import Navbar from "../Components/Navbar";
-import Footer from "../Components/Footer";
+import "./Community.css";
+import Navbar from "../../Components/Navbar/Navbar";
+import Footer from "../../Components/Footer/Footer";
 
 const initialMembers = [
   { id: 1, name: "Priya Sharma",  branch: "CSE", year: "3rd Year", avatar: "PS", badge: "🏆 Top Contributor", online: true,  skills: "React, Node.js",  connections: 42 },
