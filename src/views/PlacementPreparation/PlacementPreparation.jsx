@@ -3,3 +3,4 @@ import "./PlacementPreparation.css";
 
 function PlacementPreparation() {
   const navigate = useNavigate();
+}
