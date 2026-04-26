@@ -80,3 +80,10 @@ const Progresstracker = () => {
               <h2>📊 Overall Status</h2>
               <span className="badge badge-success">✓ Updated today</span>
             </div>
+             <div className="summary-content">
+              <div className="progress-value-group">
+                <span className="percentage-num animated-number">{displayProgress}%</span>
+                <span className="percentage-label">
+                  Completion Score
+                </span>
+              </div>
