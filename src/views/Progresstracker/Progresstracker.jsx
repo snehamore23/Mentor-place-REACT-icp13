@@ -152,3 +152,26 @@ const Progresstracker = () => {
                             }}
                           ></div>
                         </div>
+ <span 
+                          className="mini-percent-text"
+                          style={{
+                            color: item.color,
+                            fontWeight: "bold"
+                          }}
+                        >
+                          {item.progress}%
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  );
+};
+
+export default Progresstracker;
