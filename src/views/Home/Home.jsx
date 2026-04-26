@@ -79,9 +79,6 @@ const Home = ({ form }) => {
             <button className="home-btn-primary home-btn-lg" onClick={handleGetStarted}>
               {form ? "🚀 Go to Dashboard →" : "Get Started Free →"}
             </button>
-            <button className="home-btn-outline home-btn-lg" onClick={() => navigate(form ? "/dashboard" : "/signup")}>
-              Explore Resources
-            </button>
           </div>
           <div className="home-hero-trust">
             <div className="home-trust-avatars">
@@ -143,23 +140,6 @@ const Home = ({ form }) => {
             <span className="home-stat-label">{s.label}</span>
           </div>
         ))}
-      </section>
-
-      {/* ── Features ── */}
-      <section className="home-features" id="features">
-        <div className="home-section-badge">⚡ Everything You Need</div>
-        <h2 className="home-section-title">6 Powerful Features to<br /><span className="home-gradient-text">Ace Your Placements</span></h2>
-        <p className="home-section-sub">From resume to offer letter — we've got every step covered.</p>
-        <div className="home-features-grid">
-          {features.map((f, i) => (
-            <div key={i} className="home-feature-card" onClick={handleGetStarted}>
-              <div className="home-feature-icon">{f.icon}</div>
-              <h3>{f.title}</h3>
-              <p>{f.desc}</p>
-              <span className="home-feature-arrow">→</span>
-            </div>
-          ))}
-        </div>
       </section>
 
       {/* ── How it works ── */}

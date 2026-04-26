@@ -1,17 +1,37 @@
 .upload-page {
   min-height: 100vh;
+  background: var(--bg);
+  font-family: var(--font);
+  display: flex;
+  flex-direction: column;
+}
+
+.upload-body {
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--bg);
-  font-family: var(--font);
-  padding: 24px;
+  padding: 48px 24px;
 }
 
 .upload-container {
   text-align: center;
   width: 100%;
   max-width: 480px;
+}
+
+.upload-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: rgba(139,92,246,0.12);
+  border: 1px solid rgba(139,92,246,0.25);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 14px;
 }
 
 .upload-container h1 {
