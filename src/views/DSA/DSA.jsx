@@ -18,6 +18,17 @@ function DSA() {
       level: "Easy",
       note: "Stack follows LIFO and queue follows FIFO. Stack uses push/pop. Queue uses enqueue/dequeue. Used in recursion and scheduling. Important for algorithm design.",
     },
+
+    {
+      name: "Trees",
+      level: "Medium",
+      note: "Trees are hierarchical structures. Root is top node. Used in searching like BST. Helps in organizing data. Used in file systems and databases.",
+    },
+    {
+      name: "Graphs",
+      level: "Hard",
+      note: "Graphs contain vertices and edges. Used in networks and maps. BFS and DFS are traversal methods. Can be directed or undirected. Important for real-world problems.",
+    },
   ];
   const [checked, setChecked] = useState({});
 
