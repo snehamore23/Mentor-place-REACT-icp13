@@ -9,7 +9,7 @@
   justify-content: space-between;
   padding: 0 32px;
   height: 64px;
-  background: rgba(10,25,60,0.92);
+  background: #0a1940;
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
@@ -18,12 +18,12 @@
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   gap: 20px;
-  transition: background 0.3s;
+  transition: background 0.3s, border-color 0.3s;
 }
 
 [data-theme="light"] .nb {
-  background: rgba(10,25,60,0.95);
-  border-bottom-color: rgba(255,255,255,0.15);
+  background: #0a1940;
+  border-bottom-color: rgba(255,255,255,0.1);
 }
 
 /* ── Logo ── */
@@ -46,12 +46,12 @@
 .nb-logo-text {
   font-size: 17px;
   font-weight: 800;
-  color: var(--text-heading);
+  color: #ffffff;
   letter-spacing: -0.5px;
 }
 
 .nb-logo-text strong {
-  background: var(--grad-1);
+  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;

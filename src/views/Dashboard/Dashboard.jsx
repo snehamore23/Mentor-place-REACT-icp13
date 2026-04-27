@@ -81,7 +81,6 @@ export default function Dashboard({ form, completed, setCompleted, onLogout }) {
           </div>
           <div className="db-hero-right">
             <button className="btn-ghost" onClick={() => navigate("/profile")}>👤 My Profile</button>
-            <button className="btn-primary" onClick={() => navigate("/career")}>🚀 Career Guidance</button>
           </div>
         </div>
       </div>
