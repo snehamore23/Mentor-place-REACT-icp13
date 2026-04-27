@@ -1,4 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import Navbar from "../../Components/Navbar/Navbar";
+import Footer from "../../Components/Footer/Footer";
 import "./MockInterview.css";
 
 const categories = [
@@ -59,7 +62,8 @@ const questionsByCategory = {
   ],
 };
 
-export default function MockInterview() {
+export default function MockInterview({ form, onLogout }) {
+  const navigate = useNavigate();
   const [category, setCategory] = useState(null);
   const [categoryLabel, setCategoryLabel] = useState("");
   const [index, setIndex] = useState(0);
@@ -147,22 +151,20 @@ export default function MockInterview() {
   if (!category) {
     return (
       <div className="container">
-        <h1 className="title">🚀 Mock Interview</h1>
-        <div className="card-grid">
-          {categories.map((c, i) => (
-            <div
-              key={i}
-              className="card"
-              onClick={() => {
-                setCategory(c.key);
-                setCategoryLabel(c.name);
-              }}
-            >
-              <h2>{c.name}</h2>
-              <p className="card-subtitle">{c.subtitle}</p>
-            </div>
-          ))}
+        <Navbar form={form} onLogout={onLogout} onProfileClick={() => navigate("/profile")} />
+        <div className="mi-inner">
+          <h1 className="title">🚀 Mock Interview</h1>
+          <p className="mi-subtitle">Choose a category and test your knowledge with a timed quiz</p>
+          <div className="card-grid">
+            {categories.map((c, i) => (
+              <div key={i} className="card" onClick={() => { setCategory(c.key); setCategoryLabel(c.name); }}>
+                <h2>{c.name}</h2>
+                <p className="card-subtitle">{c.subtitle}</p>
+              </div>
+            ))}
+          </div>
         </div>
+        <Footer />
       </div>
     );
   }
@@ -171,6 +173,8 @@ export default function MockInterview() {
   if (!completed) {
     return (
       <div className="container">
+        <Navbar form={form} onLogout={onLogout} onProfileClick={() => navigate("/profile")} />
+        <div className="mi-inner">
         <h2>{categoryLabel}</h2>
 
         <div className="quiz-box">
@@ -193,6 +197,8 @@ export default function MockInterview() {
             <button onClick={handleSubmit}>Submit ✅</button>
           </div>
         </div>
+        </div>
+        <Footer />
       </div>
     );
   }
@@ -200,6 +206,7 @@ export default function MockInterview() {
   // 🔵 RESULT SCREEN
   return (
     <div className="container assessment-page">
+      <Navbar form={form} onLogout={onLogout} onProfileClick={() => navigate("/profile")} />
       <div className="assessment-card">
         <div className="assessment-header">
           <h1>Assessment Completed</h1>
@@ -239,6 +246,7 @@ export default function MockInterview() {
           ))
         )}
       </div>
+      <Footer />
     </div>
   );
 }
