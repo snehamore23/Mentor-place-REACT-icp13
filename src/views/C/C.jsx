@@ -2,7 +2,13 @@ import { useState } from "react";
 import "./C.css";
 
 function C() {
-  const topics = [];
+  const topics = [
+     {
+      name: "Basics",
+      level: "Easy",
+      note: "C is a procedural language. Used for system programming. Provides low-level access. Foundation for other languages. Important for logic building.",
+    },
+  ];
   return(
     <div className="container">
       <h1>C Programming</h1>
