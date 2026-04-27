@@ -2,7 +2,14 @@ import { useState } from "react";
 import "./SQL.css";
 
 function SQL() {
-  const topics = [];
+  const topics = [
+{
+      name: "Basic Queries",
+      level: "Easy",
+      note: "SQL is used to interact with database. SELECT is used to fetch data. WHERE filters records. Basic queries are foundation. Important for beginners.",
+    },
+
+  ];
 
   const [checked, setChecked] = useState({});
 
