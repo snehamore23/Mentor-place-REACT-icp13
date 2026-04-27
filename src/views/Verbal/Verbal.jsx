@@ -1,7 +1,12 @@
 import "./Verbal.css";
 
 function Verbal() {
-  const topics = [];
+  const topics = [
+    {
+      name: "Grammar",
+      note: "Grammar defines sentence rules. Important for correct communication. Helps avoid mistakes. Essential for writing. Key skill.",
+    },
+  ];
 
   return( 
  <div className="container">
