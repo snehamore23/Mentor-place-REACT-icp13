@@ -11,23 +11,19 @@
   --text-subtle: #94a3b8;
 
   --border: #e2e8f0;
-  --border-glow: #cbd5f5;
 
   --accent: #8b5cf6;
   --accent-green: #10b981;
   --accent-orange: #f59e0b;
-  --accent-purple: #8b5cf6;
 
   --grad-1: linear-gradient(135deg, #6366f1, #8b5cf6);
-  --grad-5: linear-gradient(90deg, #22c55e, #4ade80);
+  --grad-5: linear-gradient(90deg, #f97316, #ef4444);
   --grad-hero: linear-gradient(135deg, #eef2ff, #f8fafc);
 
-  --radius: 10px;
-  --radius-lg: 16px;
-  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-lg: 18px;
 
   --font: 'Inter', sans-serif;
-  --transition: 0.3s ease;
 }
 
 /* ================= GLOBAL ================= */
@@ -50,37 +46,16 @@ body {
   flex-direction: column;
 }
 
-/* ================= LOGIN GUARD ================= */
-.pt-guard {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-}
-
-.pt-guard button {
-  padding: 10px 20px;
-  background: var(--grad-1);
-  border: none;
-  border-radius: var(--radius);
-  color: white;
-  font-weight: 600;
-  cursor: pointer;
-}
-
 /* ================= HERO ================= */
 .pt-hero {
-  padding: 50px 20px;
+  padding: 60px 20px;
   text-align: center;
   background: var(--grad-hero);
   border-bottom: 1px solid var(--border);
-  position: relative;
 }
 
 .pt-hero h1 {
-  font-size: 32px;
+  font-size: 34px;
   font-weight: 800;
 }
 
@@ -95,14 +70,15 @@ body {
   background: rgba(139,92,246,0.1);
   border-radius: 20px;
   font-size: 12px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 /* ================= BODY ================= */
 .pt-body {
-  max-width: 1000px;
+  max-width: 900px;
+  width: 100%;
   margin: auto;
-  padding: 30px 20px;
+  padding: 30px 16px;
 }
 
 /* ================= STATS ================= */
@@ -116,34 +92,47 @@ body {
 .pt-stat-card {
   background: var(--bg-card);
   border-radius: var(--radius-lg);
-  padding: 20px;
+  padding: 18px;
   text-align: center;
   border: 1px solid var(--border);
-  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: 0.3s;
 }
 
 .pt-stat-card:hover {
   transform: translateY(-4px);
 }
 
+.pt-stat-icon {
+  font-size: 20px;
+}
+
 .pt-stat-val {
   font-size: 20px;
   font-weight: bold;
+  margin-top: 5px;
+}
+
+.pt-stat-label {
+  font-size: 12px;
+  color: var(--text-muted);
 }
 
 /* ================= CARD ================= */
 .pt-card {
   background: var(--bg-card);
-  padding: 20px;
+  padding: 18px;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border);
-  margin-bottom: 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
 }
 
 .pt-card-header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
+  font-weight: 600;
 }
 
 /* ================= PROGRESS BAR ================= */
@@ -156,13 +145,14 @@ body {
 
 .pt-bar-fill {
   height: 100%;
-  background: var(--grad-5);
-  transition: 0.6s;
+  border-radius: 10px;
+  transition: width 0.6s ease;
 }
 
 /* ================= WEEKLY ================= */
 .pt-weekly {
   display: flex;
+  align-items: flex-end;
   gap: 10px;
   height: 120px;
 }
@@ -173,9 +163,15 @@ body {
 }
 
 .pt-week-bar {
-  background: var(--grad-1);
   width: 100%;
-  border-radius: 6px;
+  border-radius: 6px 6px 0 0;
+  background: var(--grad-1);
+}
+
+.pt-week-day {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 6px;
 }
 
 /* ================= TASK ================= */
@@ -188,16 +184,48 @@ body {
 .pt-task-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 12px;
+  gap: 12px;
+  padding: 14px;
   border-radius: var(--radius);
   background: var(--bg-card);
   border: 1px solid var(--border);
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .pt-task-row:hover {
   transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.pt-task-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pt-task-title {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.pt-task-info {
+  flex: 1;
+}
+
+.pt-task-bar-track {
+  height: 5px;
+  background: var(--bg-hover);
+  border-radius: 10px;
+  margin-top: 6px;
+}
+
+.pt-task-bar-fill {
+  height: 100%;
+  border-radius: 10px;
 }
 
 .pt-task-badge {
