@@ -8,6 +8,16 @@ function DSA() {
       level: "Easy",
       note: "Arrays store elements in contiguous memory. They allow fast access using index. Useful in searching and sorting problems. Insertion is costly due to shifting. Basic structure for many algorithms.",
     },
+    {
+      name: "Linked List",
+      level: "Medium",
+      note: "Linked list consists of nodes connected by pointers. Memory is not contiguous. Easy insertion and deletion. Types include singly and doubly. Used in dynamic memory management.",
+    },
+    {
+      name: "Stack & Queue",
+      level: "Easy",
+      note: "Stack follows LIFO and queue follows FIFO. Stack uses push/pop. Queue uses enqueue/dequeue. Used in recursion and scheduling. Important for algorithm design.",
+    },
   ];
   const [checked, setChecked] = useState({});
 
