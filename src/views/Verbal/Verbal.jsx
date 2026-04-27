@@ -6,6 +6,18 @@ function Verbal() {
       name: "Grammar",
       note: "Grammar defines sentence rules. Important for correct communication. Helps avoid mistakes. Essential for writing. Key skill.",
     },
+    {
+      name: "Reading Comprehension",
+      note: "Improves understanding of passages. Helps in analysis. Practice increases speed. Important for exams. Enhances reading skills.",
+    },
+    {
+      name: "Vocabulary",
+      note: "Improves word knowledge. Helps in communication. Learn daily words. Important for interviews. Builds confidence.",
+    },
+    {
+      name: "Sentence Correction",
+      note: "Focuses on fixing errors. Improves grammar. Practice required. Enhances clarity. Common exam topic.",
+    },
   ];
 
   return( 
