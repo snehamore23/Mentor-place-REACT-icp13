@@ -11,6 +11,18 @@ function Aptitude() {
       name: "Percentage",
       note: "Percentage expresses value per 100. Used in profit and loss. Helps in comparison. Shortcut methods improve speed. Common exam topic.",
     },
+     {
+      name: "Profit & Loss",
+      note: "Deals with cost price and selling price. Calculates profit or loss. Important for business problems. Uses formulas. Frequently asked in exams.",
+    },
+    {
+      name: "Time & Work",
+      note: "Focuses on work efficiency. Calculates time taken. Includes combined work problems. Improves logic. Important topic.",
+    },
+    {
+      name: "Speed & Distance",
+      note: "Covers motion problems. Uses speed = distance/time. Includes trains and boats. Important formulas. Frequently asked.",
+    },
 
   ];
 
