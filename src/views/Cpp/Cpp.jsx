@@ -3,6 +3,21 @@ import "./Cpp.css";
 
 function Cpp() {
   const topics = [
+    {
+      name: "OOP Concepts",
+      level: "Easy",
+      note: "C++ supports object-oriented programming. Includes class and objects. Helps in reusable code. Important for interviews. Core concept.",
+    },
+    {
+      name: "STL",
+      level: "Medium",
+      note: "STL provides ready data structures. Includes vector, stack, queue. Saves coding time. Used in competitive programming. Important topic.",
+    },
+    {
+      name: "Pointers",
+      level: "Hard",
+      note: "Pointers work similar to C. Used for memory management. Important for performance. Complex but powerful. Frequently asked.",
+    },
 
   {
       name: "Inheritance",
