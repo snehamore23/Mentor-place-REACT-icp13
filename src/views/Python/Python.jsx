@@ -2,7 +2,14 @@ import { useState } from "react";
 import "./Python.css";
 
 function Python() {
-  const topics = [];
+  const topics = [
+{
+      name: "Basics",
+      level: "Easy",
+      note: "Python is easy to learn language. It has simple syntax. Used in automation and scripting. Supports multiple paradigms. Popular among beginners.",
+    },
+
+  ];
   const [checked, setChecked] = useState({});
 
   const toggle = (name) => {
