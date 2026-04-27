@@ -2,7 +2,17 @@ import { useState } from "react";
 import "./Aptitude.css";
 
 function Aptitude() {
-  const topics = [];
+  const topics = [
+{
+      name: "Number System",
+      note: "Number system includes integers and fractions. Helps in divisibility and remainders. Important for basic calculations. Used in many problems. Foundation of aptitude.",
+    },
+    {
+      name: "Percentage",
+      note: "Percentage expresses value per 100. Used in profit and loss. Helps in comparison. Shortcut methods improve speed. Common exam topic.",
+    },
+
+  ];
 
   const [done, setDone] = useState([]);
 
