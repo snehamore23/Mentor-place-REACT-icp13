@@ -102,9 +102,14 @@ export default function CareerGuidance({ form, onLogout }) {
         <div className="career-cta">
           <h3>Need 1-on-1 Career Guidance? 🤝</h3>
           <p>Book a free 30-minute session with our career counselors</p>
-          <button className="career-cta-btn" onClick={() => navigate("/community")}>
-            👥 Connect in Community →
-          </button>
+          <div className="career-cta-btns">
+            <button className="career-cta-btn" onClick={() => navigate("/company-questions")}>
+              🏢 Company Questions →
+            </button>
+            <button className="career-cta-btn career-cta-btn-ghost" onClick={() => navigate("/community")}>
+              👥 Connect in Community →
+            </button>
+          </div>
         </div>
 
       </div>

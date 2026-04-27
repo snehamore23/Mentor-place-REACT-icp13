@@ -75,11 +75,13 @@ const Home = ({ form }) => {
             Everything you need to crack campus placements — resume analysis, mock interviews,
             DSA roadmap, company guides, and a thriving student community.
           </p>
-          <div className="home-hero-btns">
-            <button className="home-btn-primary home-btn-lg" onClick={handleGetStarted}>
-              {form ? "🚀 Go to Dashboard →" : "Get Started Free →"}
-            </button>
-          </div>
+          {!form && (
+            <div className="home-hero-btns">
+              <button className="home-btn-primary home-btn-lg" onClick={handleGetStarted}>
+                Get Started Free →
+              </button>
+            </div>
+          )}
           <div className="home-hero-trust">
             <div className="home-trust-avatars">
               {["PS","RM","SP","AN","DR"].map((a,i) => (
@@ -189,9 +191,11 @@ const Home = ({ form }) => {
         <div className="home-cta-glow" />
         <h2>Ready to Start Your<br /><span className="home-gradient-text">Placement Journey?</span></h2>
         <p>Join 500+ students who are already preparing smarter with PlacementPro.</p>
-        <button className="home-btn-primary home-btn-lg" onClick={handleGetStarted}>
-          {form ? "🚀 Go to Dashboard →" : "Create Free Account →"}
-        </button>
+        {!form && (
+          <button className="home-btn-primary home-btn-lg" onClick={handleGetStarted}>
+            Create Free Account →
+          </button>
+        )}
         <p className="home-cta-note">No credit card · No spam · 100% free</p>
       </section>
 
