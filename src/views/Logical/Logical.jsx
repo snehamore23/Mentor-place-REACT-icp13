@@ -1,7 +1,16 @@
 import "./Logical.css";
 
 function Logical() {
-    const topics = [];
+    const topics = [
+         {
+      name: "Puzzles",
+      note: "Puzzles improve logical thinking. Require arrangement of data. Helps in reasoning. Practice improves speed. Common in exams.",
+    },
+    {
+      name: "Seating Arrangement",
+      note: "Involves placing people logically. Uses diagrams. Improves clarity. Requires attention. Frequently asked.",
+    },
+    ];
     return (
         <div className="container">
             <h1>Logical Reasoning</h1>
