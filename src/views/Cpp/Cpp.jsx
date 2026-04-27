@@ -2,8 +2,14 @@ import { useState } from "react";
 import "./Cpp.css";
 
 function Cpp() {
-  const topics = [];
+  const topics = [
+    
+  ];
+ const [checked, setChecked] = useState({});
 
+  const toggle = (name) => {
+    setChecked({ ...checked, [name]: !checked[name] });
+  };
   return(
    <div className="container">
       <h1>C++ Preparation</h1>

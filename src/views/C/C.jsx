@@ -24,6 +24,12 @@ function C() {
       note: "Structures group different data types. Used for complex data. Helps in organization. Important in real applications. Common topic.",
     },
   ];
+
+  const [checked, setChecked] = useState({});
+
+  const toggle = (name) => {
+    setChecked({ ...checked, [name]: !checked[name] });
+  };
   return(
     <div className="container">
       <h1>C Programming</h1>
