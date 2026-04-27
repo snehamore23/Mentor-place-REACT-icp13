@@ -1,192 +1,126 @@
-import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
-import "./Progresstracker.css";
+import "./ProgressTracker.css";
 
-const Progresstracker = () => {
-  const [overallProgress, setOverallProgress] = useState(0);
-  const [displayProgress, setDisplayProgress] = useState(0);
-  const [hoveredId, setHoveredId] = useState(null);
-  const [expandedId, setExpandedId] = useState(null);
+const FEATURES = [
+  { key: "resume",    title: "Resume Upload",     icon: "📄", color: "#58a6ff", path: "/upload"    },
+  { key: "prep",      title: "Placement Prep",    icon: "📚", color: "#c084fc", path: "/prep"      },
+  { key: "mock",      title: "Mock Interview",    icon: "🎤", color: "#ff6b6b", path: "/mock"      },
+  { key: "progress",  title: "Progress Tracker",  icon: "📊", color: "#ff9f43", path: "/progress"  },
+  { key: "career",    title: "Career Guidance",   icon: "🚀", color: "#00d68f", path: "/career"    },
+  { key: "community", title: "Student Community", icon: "👥", color: "#00d4ff", path: "/community" },
+];
 
-  const [items, setItems] = useState([
-    { id: 1, name: "Resume Upload", progress: 100, date: "2024-03-15", color: "#10b981", icon: "📄", status: "Completed" },
-    { id: 2, name: "Profile Setup", progress: 85, date: "2024-03-20", color: "#3b82f6", icon: "👤", status: "In Progress" },
-    { id: 3, name: "Mock Interviews", progress: 50, date: "2024-03-25", color: "#f59e0b", icon: "🎤", status: "In Progress" },
-    { id: 4, name: "Skill Assessment", progress: 30, date: "2024-04-01", color: "#ec4899", icon: "🎯", status: "Pending" },
-    { id: 5, name: "Job Applications", progress: 15, date: "Pending", color: "#8b5cf6", icon: "📧", status: "Not Started" },
-  ]);
+const WEEKLY = [
+  { day: "Mon", val: 60 }, { day: "Tue", val: 80 }, { day: "Wed", val: 45 },
+  { day: "Thu", val: 90 }, { day: "Fri", val: 70 }, { day: "Sat", val: 55 }, { day: "Sun", val: 30 },
+];
 
-  // Animate progress number
-  useEffect(() => {
-    const total = items.reduce((sum, item) => sum + item.progress, 0);
-    const target = Math.round(total / items.length);
-    setOverallProgress(target);
+export default function ProgressTracker({ form, completed = {}, onLogout }) {
+  const navigate = useNavigate();
 
-    let current = 0;
-    const increment = target / 30;
-    const timer = setInterval(() => {
-      current += increment;
-      if (current >= target) {
-        setDisplayProgress(target);
-        clearInterval(timer);
-      } else {
-        setDisplayProgress(Math.round(current));
-      }
-    }, 20);
-
-    return () => clearInterval(timer);
-  }, [items]);
-
-  const completedCount = items.filter(item => item.progress === 100).length;
-  const inProgressCount = items.filter(item => item.progress > 0 && item.progress < 100).length;
-
-  const toggleExpand = (id) => {
-    setExpandedId(expandedId === id ? null : id);
-  };
-
-  return (
-    <div className="proper-tracker-container">
-      <main className="proper-main">
-        {/* Header */}
-        <div className="page-header">
-          <div className="breadcrumb">
-            Dashboard / <span className="active">Progress Tracker</span>
-          </div>
-          <h1>🚀 My Placement Journey</h1>
-          <p>Monitor your preparation status and upcoming milestones with ease.</p>
-        </div>
-
-        {/* Stats Cards */}
-        <div className="stats-container">
-          <div className="stat-card stat-card-primary">
-            <div className="stat-icon">📊</div>
-            <div className="stat-content">
-              <span className="stat-label">Overall Progress</span>
-              <span className="stat-value">{displayProgress}%</span>
-            </div>
-          </div>
-          <div className="stat-card stat-card-success">
-            <div className="stat-icon">✅</div>
-            <div className="stat-content">
-              <span className="stat-label">Completed</span>
-              <span className="stat-value">{completedCount}/{items.length}</span>
-            </div>
-          </div>
-          <div className="stat-card stat-card-warning">
-            <div className="stat-icon">⏳</div>
-            <div className="stat-content">
-              <span className="stat-label">In Progress</span>
-              <span className="stat-value">{inProgressCount}</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="dashboard-grid">
-          {/* Overall Progress Card */}
-          <section className="card summary-card gradient-bg-blue">
-            <div className="card-header">
-              <h2>📊 Overall Status</h2>
-              <span className="badge badge-success">✓ Updated today</span>
-            </div>
-
-            <div className="summary-content">
-              <div className="progress-value-group">
-                <span className="percentage-num animated-number">{displayProgress}%</span>
-                <span className="percentage-label">
-                  Completion Score
-                </span>
-              </div>
-
-              <div className="progress-bar-wrapper">
-                <div className="progress-bar-base">
-                  <div
-                    className="progress-bar-fill-proper"
-                    style={{ width: `${displayProgress}%` }}
-                  ></div>
-                </div>
-                <div className="progress-bar-markers">
-                  <span>Start</span>
-                  <span>Mid</span>
-                  <span>Goal</span>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Milestones Table */}
-          <section className="card roadmap-card">
-            <div className="card-header">
-              <h2>📍 Detailed Milestones</h2>
-              <span className="card-subtitle">{items.length} milestones tracked</span>
-            </div>
-
-            <div className="milestones-table">
-              <div className="table-header">
-                <span>Milestone</span>
-                <span>Activity</span>
-                <span>Status</span>
-              </div>
-
-              <div className="table-body">
-                {items.map((item) => (
-                  <div 
-                    key={item.id} 
-                    className="table-row"
-                    onMouseEnter={() => setHoveredId(item.id)}
-                    onMouseLeave={() => setHoveredId(null)}
-                    onClick={() => toggleExpand(item.id)}
-                    style={{
-                      backgroundColor: hoveredId === item.id ? "#f0f9ff" : "transparent",
-                      transition: "all 0.3s ease",
-                      cursor: "pointer"
-                    }}
-                  >
-                    <div className="col-name">
-                      <span className="milestone-icon">{item.icon}</span>
-                      <div>
-                        <strong>{item.name}</strong>
-                        <div className="status-badge" style={{ backgroundColor: item.color }}>
-                          {item.status}
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="col-date">{item.date}</div>
-
-                    <div className="col-progress">
-                      <div className="mini-progress-group">
-                        <div className="mini-bar-base">
-                          <div
-                            className="mini-bar-fill-proper"
-                            style={{
-                              width: `${item.progress}%`,
-                              backgroundColor: item.color,
-                              transition: "width 0.6s ease"
-                            }}
-                          ></div>
-                        </div>
-
-                        <span 
-                          className="mini-percent-text"
-                          style={{
-                            color: item.color,
-                            fontWeight: "bold"
-                          }}
-                        >
-                          {item.progress}%
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        </div>
-      </main>
+  if (!form) return (
+    <div className="pt-guard">
+      <p>Please login first.</p>
+      <button onClick={() => navigate("/")}>Login</button>
     </div>
   );
-};
 
-export default Progresstracker;
+  const done       = Object.values(completed).filter(Boolean).length;
+  const total      = FEATURES.length;
+  const taskPct    = Math.round((done / total) * 100);
+  const profilePct = Math.round((!!form.name + !!form.branch + !!form.year + !!form.skills) * 25);
+  const overallPct = Math.min(100, Math.round(profilePct * 0.3 + taskPct * 0.7));
+
+  const STATS = [
+    { icon: "🏆", val: `${overallPct}%`, label: "Overall Score",    color: "var(--accent-orange)" },
+    { icon: "✅", val: `${done}/${total}`, label: "Tasks Done",      color: "var(--accent-green)"  },
+    { icon: "👤", val: `${profilePct}%`,  label: "Profile Complete", color: "var(--accent)"        },
+    { icon: "🎯", val: `${total - done}`, label: "Remaining",        color: "var(--accent-purple)" },
+  ];
+
+  return (
+    <div className="pt-page">
+      <Navbar form={form} onLogout={onLogout} onProfileClick={() => navigate("/profile")} />
+
+      <div className="pt-hero">
+        <div className="pt-hero-glow" />
+        <div className="pt-hero-badge">📊 Analytics</div>
+        <h1>Progress Tracker</h1>
+        <p>Visualize your placement preparation journey with detailed analytics</p>
+      </div>
+
+      <div className="pt-body">
+
+        {/* Stats */}
+        <div className="pt-stats">
+          {STATS.map((s, i) => (
+            <div key={i} className="pt-stat-card">
+              <span className="pt-stat-icon" style={{ color: s.color }}>{s.icon}</span>
+              <span className="pt-stat-val"  style={{ color: s.color }}>{s.val}</span>
+              <span className="pt-stat-label">{s.label}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Overall progress */}
+        <div className="pt-card">
+          <div className="pt-card-header">
+            <span className="pt-card-title">🎯 Overall Placement Score</span>
+            <span className="pt-card-val" style={{ color: "var(--accent-orange)" }}>{overallPct}%</span>
+          </div>
+          <div className="pt-bar-track">
+            <div className="pt-bar-fill" style={{ width: `${overallPct}%`, background: "var(--grad-5)" }} />
+          </div>
+          <p className="pt-card-hint">Based on profile completeness (30%) + task completion (70%)</p>
+        </div>
+
+        {/* Weekly activity */}
+        <div className="pt-card">
+          <div className="pt-card-header">
+            <span className="pt-card-title">📅 Weekly Activity</span>
+            <span className="pt-card-sub">This week</span>
+          </div>
+          <div className="pt-weekly">
+            {WEEKLY.map((w, i) => (
+              <div key={i} className="pt-week-col">
+                <div className="pt-week-bar-wrap">
+                  <div className="pt-week-bar" style={{ height: `${w.val}%`, background: "var(--grad-1)" }} />
+                </div>
+                <span className="pt-week-day">{w.day}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Task breakdown */}
+        <div className="pt-card-title-row">
+          <span className="pt-section-title">📋 Task Breakdown</span>
+          <span className="pt-section-sub">{done} of {total} completed</span>
+        </div>
+        <div className="pt-tasks">
+          {FEATURES.map((f) => {
+            const isDone = !!completed[f.key];
+            return (
+              <div key={f.key} className="pt-task-row" onClick={() => navigate(f.path)}>
+                <div className="pt-task-icon" style={{ background: f.color + "20", color: f.color }}>{f.icon}</div>
+                <div className="pt-task-info">
+                  <span className="pt-task-title">{f.title}</span>
+                  <div className="pt-task-bar-track">
+                    <div className="pt-task-bar-fill" style={{ width: isDone ? "100%" : "0%", background: f.color }} />
+                  </div>
+                </div>
+                <span className={`pt-task-badge ${isDone ? "pt-badge-done" : "pt-badge-todo"}`}>
+                  {isDone ? "✓ Done" : "Pending"}
+                </span>
+              </div>
+            );
+          })}
+        </div>
+
+      </div>
+      <Footer />
+    </div>
+  );
+}
