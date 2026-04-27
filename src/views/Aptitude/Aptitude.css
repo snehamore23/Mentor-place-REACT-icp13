@@ -1,0 +1,31 @@
+.container {
+  padding: 30px;
+  background: #eef7ff;
+  text-align: center;
+}
+
+h1 {
+  color: #1e3a8a;
+}
+
+
+.card-container {
+  display: flex;
+  justify-content: center;   
+  align-items: stretch;      
+  flex-wrap: wrap;           
+  gap: 25px;
+  margin-top: 20px;
+}
+
+/* card */
+.card {
+  width: 280px;              
+  padding: 15px;
+  background: white;
+  border-radius: 10px;
+  border-left: 5px solid #2563eb;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: left;
+  margin: 0;
+}
