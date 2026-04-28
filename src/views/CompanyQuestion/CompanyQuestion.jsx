@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import "../../views/CompanyQuestion/CompanyQuestion.css";
-
+import "./CompanyQuestion.css";
 const CompanyQuestions = () => {
   const [selectedCompany, setSelectedCompany] = useState(null);
   const [selectedSubject, setSelectedSubject] = useState(null);
@@ -16,7 +15,6 @@ const CompanyQuestions = () => {
     SQL: ["DBMS?", "SQL?", "Primary key?", "Foreign key?", "Join?", "Types?", "Normalization?", "Index?", "View?", "Procedure?", "Trigger?", "Transaction?", "ACID?", "Group by?", "Having?"],
     Aptitude: ["Time Work", "Speed", "Profit", "SI", "CI", "Ratio", "Probability", "Permutation", "Number", "Average", "Percentage", "Mixture", "Calendar", "Clock", "DI"]
   };
-
   const handleCardClick = (company) => {
     setSelectedCompany(company);
     setSelectedSubject(null);
