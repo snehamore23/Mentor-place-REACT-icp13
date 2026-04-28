@@ -12,7 +12,7 @@ const features = [
   { title: "Student Community",  icon: "👥", key: "community", pts: 15, path: "/community", color: "#58a6ff" },
 ];
 
-export default function ProfilePage({ form, setForm, completed = {} }) {
+export default function ProfilePage({ form, completed = {} }) {
   const navigate = useNavigate();
 
   if (!form) return (
