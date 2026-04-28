@@ -5,7 +5,6 @@ body {
   min-height: 100vh;
   color: white;
 }
-
 /* Title */
 .title {
   text-align: center;
@@ -16,7 +15,6 @@ body {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 /* Cards Grid */
 .cards {
   display: grid;
@@ -24,7 +22,6 @@ body {
   gap: 25px;
   padding: 40px;
 }
-
 /* Card Style */
 .card {
   height: 140px;
@@ -41,7 +38,6 @@ body {
   position: relative;
   overflow: hidden;
 }
-
 /* Neon Border Effect */
 .card::after {
   content: "";
@@ -59,18 +55,15 @@ body {
     linear-gradient(#000 0 0);
   mask-composite: exclude;
 }
-
 .card:hover {
   transform: translateY(-10px) scale(1.05);
   box-shadow: 0 20px 40px rgba(0,0,0,0.6);
 }
-
 /* Subjects */
 #subjects {
   text-align: center;
   margin-top: 20px;
 }
-
 .subject-btn {
   margin: 10px;
   padding: 12px 22px;
@@ -82,11 +75,9 @@ body {
   background: linear-gradient(135deg, #00c6ff, #0072ff);
   transition: 0.3s;
 }
-
 .subject-btn:hover {
   transform: scale(1.1);
 }
-
 /* Question Box */
 .question-box {
   width: 70%;
@@ -97,22 +88,18 @@ body {
   background: rgba(255,255,255,0.1);
   border: 1px solid rgba(255,255,255,0.2);
 }
-
 /* List */
 ul {
   text-align: left;
 }
-
 li {
   margin: 8px 0;
   padding: 8px;
   border-radius: 10px;
 }
-
 li:hover {
   background: rgba(255,255,255,0.2);
 }
-
 .hidden {
   display: none;
 }
