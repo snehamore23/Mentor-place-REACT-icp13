@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import "./CompanyQuestion.css";
+import Navbar from "../../components/Navbar/Navbar";
+import Footer from "../../components/Footer/Footer";
+
+
 const CompanyQuestions = () => {
   const [selectedCompany, setSelectedCompany] = useState(null);
   const [selectedSubject, setSelectedSubject] = useState(null);
