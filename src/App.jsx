@@ -20,7 +20,16 @@ import ResumeAnalysis   from "./views/ResumeAnalysis/ResumeAnalysis";
 import CompanyQuestions from "./views/CompanyQuestion/CompanyQuestion";
 import ProgressTracker  from "./views/ProgressTracker/ProgressTracker";
 import CareerGuidance   from "./views/CareerGuidance/CareerGuidance";
-import PlacementPrep    from "./views/PlacementPrep/PlacementPrep";
+import PlacementPreparation from "./views/PlacementPreparation/PlacementPreparation";
+import DSA     from "./views/DSA/DSA";
+import Aptitude from "./views/Aptitude/Aptitude";
+import Logical  from "./views/Logical/Logical";
+import Verbal   from "./views/Verbal/Verbal";
+import C        from "./views/C/C";
+import Cpp      from "./views/Cpp/Cpp";
+import Java     from "./views/Java/Java";
+import Python   from "./views/Python/Python";
+import SQL      from "./views/SQL/SQL";
 
 const DEFAULT_USER = {
   name: "Aksha Student",
@@ -63,7 +72,7 @@ export default function App() {
           } />
           <Route path="/profile" element={
             <Protected form={form}>
-              <Profile form={form} setForm={setForm} completed={completed} />
+              <Profile form={form} completed={completed} />
             </Protected>
           } />
           <Route path="/resources" element={
@@ -106,8 +115,17 @@ export default function App() {
             <Protected form={form}><CareerGuidance form={form} onLogout={onLogout} /></Protected>
           } />
           <Route path="/prep" element={
-            <Protected form={form}><PlacementPrep form={form} onLogout={onLogout} /></Protected>
+            <Protected form={form}><PlacementPreparation form={form} onLogout={onLogout} /></Protected>
           } />
+          <Route path="/dsa"      element={<Protected form={form}><DSA      form={form} onLogout={onLogout} /></Protected>} />
+          <Route path="/aptitude" element={<Protected form={form}><Aptitude form={form} onLogout={onLogout} /></Protected>} />
+          <Route path="/logical"  element={<Protected form={form}><Logical  form={form} onLogout={onLogout} /></Protected>} />
+          <Route path="/verbal"   element={<Protected form={form}><Verbal   form={form} onLogout={onLogout} /></Protected>} />
+          <Route path="/c"        element={<Protected form={form}><C        form={form} onLogout={onLogout} /></Protected>} />
+          <Route path="/cpp"      element={<Protected form={form}><Cpp      form={form} onLogout={onLogout} /></Protected>} />
+          <Route path="/java"     element={<Protected form={form}><Java     form={form} onLogout={onLogout} /></Protected>} />
+          <Route path="/python"   element={<Protected form={form}><Python   form={form} onLogout={onLogout} /></Protected>} />
+          <Route path="/sql"      element={<Protected form={form}><SQL      form={form} onLogout={onLogout} /></Protected>} />
 
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
