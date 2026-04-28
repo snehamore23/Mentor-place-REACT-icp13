@@ -18,7 +18,7 @@ import Community        from "./views/Community/Community";
 import ResumeUpload     from "./views/ResumeUpload/Resumeupload";
 import ResumeAnalysis   from "./views/ResumeAnalysis/ResumeAnalysis";
 import CompanyQuestions from "./views/CompanyQuestion/CompanyQuestion";
-import ProgressTracker  from "./views/ProgressTracker/ProgressTracker";
+import ProgressTracker  from "./views/Progresstracker/Progresstracker";
 import CareerGuidance   from "./views/CareerGuidance/CareerGuidance";
 import PlacementPreparation from "./views/PlacementPreparation/PlacementPreparation";
 import DSA     from "./views/DSA/DSA";

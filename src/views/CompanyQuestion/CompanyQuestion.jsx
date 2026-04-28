@@ -1,87 +1,123 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Navbar from "../../Components/Navbar/Navbar";
+import Footer from "../../Components/Footer/Footer";
 import "./CompanyQuestion.css";
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
 
+const companies = [
+  { name: "TCS",       icon: "💼", color: "#58a6ff" },
+  { name: "Infosys",   icon: "💻", color: "#c084fc" },
+  { name: "Wipro",     icon: "🚀", color: "#ff9f43" },
+  { name: "Accenture", icon: "🌐", color: "#00d68f" },
+  { name: "Capgemini", icon: "⚡", color: "#ff6b6b" },
+];
 
-const CompanyQuestions = () => {
+const subjects = [
+  { name: "C",        icon: "💻" },
+  { name: "C++",      icon: "⚙️" },
+  { name: "Java",     icon: "☕" },
+  { name: "Python",   icon: "🐍" },
+  { name: "SQL",      icon: "🗄️" },
+  { name: "Aptitude", icon: "🧮" },
+];
+
+const questionsData = {
+  Java:     ["What is JVM?", "Difference between JDK and JRE?", "What is OOP?", "Explain Inheritance.", "What is Polymorphism?", "What is Encapsulation?", "What is Abstraction?", "What is Exception Handling?", "What are Threads?", "What is Collections Framework?", "ArrayList vs LinkedList?", "Interface vs Abstract class?", "What is method Overloading?", "What is method Overriding?", "What is a Constructor?"],
+  C:        ["What is a Pointer?", "What is a Structure?", "What is malloc()?", "Difference: Array vs Pointer?", "What is Recursion?", "What is a Function?", "What is a Null Pointer?", "What is File Handling?", "What is Dynamic Memory Allocation?", "Stack vs Heap memory?", "What is a Macro?", "What is a Union?", "What is typedef?", "What is Segmentation Fault?", "What is a Preprocessor?"],
+  "C++":    ["What is OOP?", "What is a Class?", "What is a Constructor?", "What is a Destructor?", "What is Inheritance?", "What is Polymorphism?", "What is Encapsulation?", "What is Operator Overloading?", "What is a Virtual Function?", "What is a Friend Function?", "What is a Namespace?", "What is a Template?", "What is STL?", "C vs C++?", "What is Abstraction?"],
+  Python:   ["What is Python?", "What is a List?", "Tuple vs List?", "What is a Dictionary?", "What is a Set?", "What is a Lambda Function?", "What is OOP in Python?", "What is a Module?", "What is a Package?", "What is Exception Handling?", "What is a Generator?", "What is Recursion?", "What is File Handling?", "What is Inheritance?", "What are Decorators?"],
+  SQL:      ["What is DBMS?", "What is SQL?", "What is a Primary Key?", "What is a Foreign Key?", "What is a JOIN?", "Types of JOINs?", "What is Normalization?", "What is an Index?", "What is a View?", "What is a Stored Procedure?", "What is a Trigger?", "What is a Transaction?", "What is ACID?", "What is GROUP BY?", "HAVING vs WHERE?"],
+  Aptitude: ["Time & Work problems", "Speed, Distance & Time", "Profit & Loss", "Simple Interest", "Compound Interest", "Ratio & Proportion", "Probability basics", "Permutation & Combination", "Number System", "Averages", "Percentages", "Mixture & Alligation", "Calendar problems", "Clock problems", "Data Interpretation"],
+};
+
+export default function CompanyQuestions({ form, onLogout }) {
+  const navigate = useNavigate();
   const [selectedCompany, setSelectedCompany] = useState(null);
   const [selectedSubject, setSelectedSubject] = useState(null);
 
-  const subjects = ["C", "C++", "Java", "Python", "SQL", "Aptitude"];
-
-  const questionsData = {
-    Java: ["JVM?", "JDK?", "OOP?", "Inheritance?", "Polymorphism?", "Encapsulation?", "Abstraction?", "Exception?", "Threads?", "Collections?", "ArrayList?", "Interface?", "Abstract?", "Overloading?", "Overriding?"],
-    C: ["Pointer?", "Structure?", "malloc?", "Array?", "Recursion?", "Function?", "Null pointer?", "File handling?", "DMA?", "Stack vs Heap?", "Macro?", "Union?", "typedef?", "Seg fault?", "Preprocessor?"],
-    "C++": ["OOP?", "Class?", "Constructor?", "Destructor?", "Inheritance?", "Polymorphism?", "Encapsulation?", "Operator overloading?", "Virtual?", "Friend?", "Namespace?", "Template?", "STL?", "C vs C++?", "Abstraction?"],
-    Python: ["Python?", "List?", "Tuple?", "Dict?", "Set?", "Function?", "Lambda?", "OOP?", "Module?", "Package?", "Exception?", "Loop?", "Recursion?", "File handling?", "Inheritance?"],
-    SQL: ["DBMS?", "SQL?", "Primary key?", "Foreign key?", "Join?", "Types?", "Normalization?", "Index?", "View?", "Procedure?", "Trigger?", "Transaction?", "ACID?", "Group by?", "Having?"],
-    Aptitude: ["Time Work", "Speed", "Profit", "SI", "CI", "Ratio", "Probability", "Permutation", "Number", "Average", "Percentage", "Mixture", "Calendar", "Clock", "DI"]
-  };
-  const handleCardClick = (company) => {
-    setSelectedCompany(company);
-    setSelectedSubject(null);
-  };
-  const handleSubjectClick = (subject) => {
-    setSelectedSubject(subject);
-  };
-  return (
-    <div className="container">
-      <h1 className="title">🚀 Placement Preparation Hub</h1>
-
-      {/* Company Cards */}
-      {!selectedCompany ? (
-        <div id="companies" className="cards">
-          <div className="card" onClick={() => handleCardClick("TCS")}>💼 TCS</div>
-          <div className="card" onClick={() => handleCardClick("Infosys")}>💻 Infosys</div>
-          <div className="card" onClick={() => handleCardClick("Wipro")}>🚀 Wipro</div>
-          <div className="card" onClick={() => handleCardClick("Accenture")}>🌐 Accenture</div>
-          <div className="card" onClick={() => handleCardClick("Capgemini")}>⚡ Capgemini</div>
-        </div>
-      ) : null}
-      {/* Subjects */}
-      {selectedCompany && !selectedSubject ? (
-        <div id="subjects">
-          <h2>{selectedCompany} Subjects</h2>
-          <button 
-            className="subject-btn back-link" 
-            onClick={() => setSelectedCompany(null)}
-          >
-            ← Back
-          </button>
-          <div>
-            {subjects.map((sub) => (
-              <button
-                key={sub}
-                className="subject-btn"
-                onClick={() => handleSubjectClick(sub)}
-              >
-                {sub}
-              </button>
-            ))}
-          </div>
-        </div>
-      ) : null}
-
-      {/* Questions */}
-      {selectedCompany && selectedSubject ? (
-        <div id="questions" className="question-box">
-          <h2>{selectedCompany} - {selectedSubject}</h2>
-          <button 
-            className="subject-btn back-link" 
-            onClick={() => setSelectedSubject(null)}
-          >
-            ← Back
-          </button>
-          <ul>
-            {questionsData[selectedSubject].map((q, idx) => (
-              <li key={idx}>{q}</li>
-            ))}
-          </ul>
-        </div>
-      ) : null}
+  if (!form) return (
+    <div className="cq-guard">
+      <p>Please login first.</p>
+      <button onClick={() => navigate("/")}>Login</button>
     </div>
   );
-};
 
-export default CompanyQuestions;
+  return (
+    <div className="cq-page">
+      <Navbar form={form} onLogout={onLogout} onProfileClick={() => navigate("/profile")} />
+
+      {/* Hero */}
+      <div className="cq-hero">
+        <div className="cq-hero-glow" />
+        <div className="cq-hero-badge">🚀 Interview Prep</div>
+        <h1>Company-Wise Questions</h1>
+        <p>Practice subject-wise questions asked by top placement companies</p>
+        <div className="cq-hero-stats">
+          <span>🏢 {companies.length} Companies</span>
+          <span>📚 {subjects.length} Subjects</span>
+          <span>❓ 15 Questions Each</span>
+        </div>
+      </div>
+
+      <div className="cq-body">
+
+        {/* Step 1 — Companies */}
+        {!selectedCompany && (
+          <>
+            <div className="cq-section-label">🏢 Select a Company</div>
+            <div className="cq-company-grid">
+              {companies.map((c, i) => (
+                <div key={i} className="cq-company-card" onClick={() => { setSelectedCompany(c); setSelectedSubject(null); }}>
+                  <div className="cq-company-accent" style={{ background: c.color }} />
+                  <span className="cq-company-icon">{c.icon}</span>
+                  <span className="cq-company-name">{c.name}</span>
+                  <span className="cq-company-arrow">→</span>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
+
+        {/* Step 2 — Subjects */}
+        {selectedCompany && !selectedSubject && (
+          <>
+            <div className="cq-breadcrumb">
+              <button onClick={() => setSelectedCompany(null)}>← Back</button>
+              <span>{selectedCompany.icon} {selectedCompany.name}</span>
+            </div>
+            <div className="cq-section-label">📚 Select a Subject</div>
+            <div className="cq-subject-grid">
+              {subjects.map((s, i) => (
+                <button key={i} className="cq-subject-btn" onClick={() => setSelectedSubject(s)}>
+                  <span>{s.icon}</span>
+                  <span>{s.name}</span>
+                </button>
+              ))}
+            </div>
+          </>
+        )}
+
+        {/* Step 3 — Questions */}
+        {selectedCompany && selectedSubject && (
+          <>
+            <div className="cq-breadcrumb">
+              <button onClick={() => setSelectedSubject(null)}>← Back</button>
+              <span>{selectedCompany.icon} {selectedCompany.name} · {selectedSubject.icon} {selectedSubject.name}</span>
+            </div>
+            <div className="cq-section-label">❓ Questions</div>
+            <div className="cq-questions">
+              {(questionsData[selectedSubject.name] || []).map((q, i) => (
+                <div key={i} className="cq-question-item">
+                  <span className="cq-q-num">Q{i + 1}</span>
+                  <span className="cq-q-text">{q}</span>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
+
+      </div>
+      <Footer />
+    </div>
+  );
+}
