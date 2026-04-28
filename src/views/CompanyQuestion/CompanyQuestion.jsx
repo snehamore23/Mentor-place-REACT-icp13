@@ -21,11 +21,9 @@ const CompanyQuestions = () => {
     setSelectedCompany(company);
     setSelectedSubject(null);
   };
-
   const handleSubjectClick = (subject) => {
     setSelectedSubject(subject);
   };
-
   return (
     <div className="container">
       <h1 className="title">🚀 Placement Preparation Hub</h1>
@@ -40,7 +38,6 @@ const CompanyQuestions = () => {
           <div className="card" onClick={() => handleCardClick("Capgemini")}>⚡ Capgemini</div>
         </div>
       ) : null}
-
       {/* Subjects */}
       {selectedCompany && !selectedSubject ? (
         <div id="subjects">
