@@ -30,10 +30,10 @@ export default function Login({ onLogin }) {
 
     if (isSignup) {
       onLogin?.({ name: form.name, branch: form.branch, year: form.year, skills: form.skills });
-      navigate("/profile");
+      navigate("/home");
     } else {
       onLogin?.({ name: form.email.split("@")[0], branch: "CSE", year: "3rd Year", skills: "React, DSA" });
-      navigate("/profile");
+      navigate("/home");
     }
   };
 

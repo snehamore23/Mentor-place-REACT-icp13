@@ -82,6 +82,13 @@ const Home = ({ form }) => {
               </button>
             </div>
           )}
+          {form && (
+            <div className="home-hero-btns">
+              <button className="home-btn-primary home-btn-lg" onClick={() => navigate("/dashboard")}>
+                🚀 Go to Dashboard →
+              </button>
+            </div>
+          )}
           <div className="home-hero-trust">
             <div className="home-trust-avatars">
               {["PS","RM","SP","AN","DR"].map((a,i) => (
