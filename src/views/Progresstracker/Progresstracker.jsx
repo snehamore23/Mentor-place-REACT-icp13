@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
-import "./ProgressTracker.css";
+import "./Progresstracker.css";
 
 const FEATURES = [
   { key: "resume",    title: "Resume Upload",     icon: "📄", color: "#58a6ff", path: "/upload"    },
@@ -17,7 +17,7 @@ const WEEKLY = [
   { day: "Thu", val: 90 }, { day: "Fri", val: 70 }, { day: "Sat", val: 55 }, { day: "Sun", val: 30 },
 ];
 
-export default function ProgressTracker({ form, completed = {}, onLogout }) {
+export default function Progresstracker({ form, completed = {}, onLogout }) {
   const navigate = useNavigate();
 
   if (!form) return (
