@@ -71,7 +71,7 @@ npm install
 npm run dev
 
 5️⃣ Open in browser
-http://localhost:5173
+https://app.netlify.com/projects/placementpro-react-project-icp13/overview
 
 
 
