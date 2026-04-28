@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import "../styles/CompanyQuestions.css";
+import "./CompanyQuestions.css";
 
 const CompanyQuestions = () => {
   const [selectedCompany, setSelectedCompany] = useState(null);
   const [selectedSubject, setSelectedSubject] = useState(null);
 
-  const companies = ["TCS", "Infosys", "Wipro", "Accenture", "Capgemini"];
   const subjects = ["C", "C++", "Java", "Python", "SQL", "Aptitude"];
 
   const questionsData = {
