@@ -18,7 +18,7 @@ export default function Home1() {
       <section className="h1-hero">
         <div className="h1-glow h1-glow-1" />
         <div className="h1-glow h1-glow-2" />
-        <h1 className="h1-hero-title">PlaceMentor</h1>
+        <h1 className="h1-hero-title">PlacementPro</h1>
         <p className="h1-hero-sub">Smart Placement Preparation System</p>
         <div className="h1-btn-wrap">
           <button className="h1-btn-primary" onClick={() => navigate("/login")}>
@@ -30,14 +30,14 @@ export default function Home1() {
       {/* ABOUT */}
       <section className="h1-about">
         <h2 className="h1-heading">
-          About <span>PlaceMentor</span>
+          About <span>PlacementPro</span>
         </h2>
         <p className="h1-subtext">
           A smart platform designed to simplify placement preparation using modern technology.
         </p>
         <div className="h1-about-content">
           <p>
-            PlaceMentor helps students prepare efficiently for campus placements by combining
+            PlacementPro helps students prepare efficiently for campus placements by combining
             resume analysis, mock interviews, and structured learning in one system.
           </p>
           <p>
