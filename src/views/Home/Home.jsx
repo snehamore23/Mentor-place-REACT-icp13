@@ -75,14 +75,20 @@ const Home = ({ form }) => {
             Everything you need to crack campus placements — resume analysis, mock interviews,
             DSA roadmap, company guides, and a thriving student community.
           </p>
-          <div className="home-hero-btns">
-            <button className="home-btn-primary home-btn-lg" onClick={handleGetStarted}>
-              {form ? "🚀 Go to Dashboard →" : "Get Started Free →"}
-            </button>
-            <button className="home-btn-outline home-btn-lg" onClick={() => navigate(form ? "/dashboard" : "/signup")}>
-              Explore Resources
-            </button>
-          </div>
+          {!form && (
+            <div className="home-hero-btns">
+              <button className="home-btn-primary home-btn-lg" onClick={handleGetStarted}>
+                Get Started Free →
+              </button>
+            </div>
+          )}
+          {form && (
+            <div className="home-hero-btns">
+              <button className="home-btn-primary home-btn-lg" onClick={() => navigate("/dashboard")}>
+                🚀 Go to Dashboard →
+              </button>
+            </div>
+          )}
           <div className="home-hero-trust">
             <div className="home-trust-avatars">
               {["PS","RM","SP","AN","DR"].map((a,i) => (
@@ -145,23 +151,6 @@ const Home = ({ form }) => {
         ))}
       </section>
 
-      {/* ── Features ── */}
-      <section className="home-features" id="features">
-        <div className="home-section-badge">⚡ Everything You Need</div>
-        <h2 className="home-section-title">6 Powerful Features to<br /><span className="home-gradient-text">Ace Your Placements</span></h2>
-        <p className="home-section-sub">From resume to offer letter — we've got every step covered.</p>
-        <div className="home-features-grid">
-          {features.map((f, i) => (
-            <div key={i} className="home-feature-card" onClick={handleGetStarted}>
-              <div className="home-feature-icon">{f.icon}</div>
-              <h3>{f.title}</h3>
-              <p>{f.desc}</p>
-              <span className="home-feature-arrow">→</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* ── How it works ── */}
       <section className="home-how">
         <div className="home-section-badge">🗺️ Simple Process</div>
@@ -209,9 +198,11 @@ const Home = ({ form }) => {
         <div className="home-cta-glow" />
         <h2>Ready to Start Your<br /><span className="home-gradient-text">Placement Journey?</span></h2>
         <p>Join 500+ students who are already preparing smarter with PlacementPro.</p>
-        <button className="home-btn-primary home-btn-lg" onClick={handleGetStarted}>
-          {form ? "🚀 Go to Dashboard →" : "Create Free Account →"}
-        </button>
+        {!form && (
+          <button className="home-btn-primary home-btn-lg" onClick={handleGetStarted}>
+            Create Free Account →
+          </button>
+        )}
         <p className="home-cta-note">No credit card · No spam · 100% free</p>
       </section>
 

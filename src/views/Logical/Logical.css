@@ -1,0 +1,28 @@
+.container {
+  padding: 30px;
+  background: #fff7ed;
+  text-align: center;
+}
+
+h1 {
+  color: #c2410c;
+}
+
+.card {
+  width: 320px;
+  margin: 15px auto;
+  padding: 15px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.card h3 {
+  color: #ea580c;
+}
+
+.card p {
+  font-size: 14px;
+  line-height: 1.6;
+}

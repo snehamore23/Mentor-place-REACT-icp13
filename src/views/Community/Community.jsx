@@ -22,10 +22,10 @@ const mockPosts = [
 ];
 
 const tagColors = {
-  "Interview Tip": { bg: "#ede9fe", color: "#7c3aed" },
-  "Resource":      { bg: "#dbeafe", color: "#1d4ed8" },
-  "Success Story": { bg: "#dcfce7", color: "#15803d" },
-  "Question":      { bg: "#fef9c3", color: "#a16207" },
+  "Interview Tip": { bg: "rgba(139,92,246,0.15)",  color: "#a78bfa" },
+  "Resource":      { bg: "rgba(59,130,246,0.15)",  color: "#60a5fa" },
+  "Success Story": { bg: "rgba(16,185,129,0.15)",  color: "#34d399" },
+  "Question":      { bg: "rgba(245,158,11,0.15)",  color: "#fbbf24" },
 };
 
 const avatarColors = [
