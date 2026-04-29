@@ -1,9 +1,12 @@
-.rc-page { min-height: 100vh; background: var(--bg); font-family: var(--font); text-align: center; }
+.rc-page { min-height: 100vh; background: var(--bg); font-family: var(--font); display: flex; flex-direction: column; }
 .rc-guard { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; background: var(--bg); font-size: 16px; color: var(--text); }
-.rc-guard button { padding: 10px 24px; border-radius: var(--radius-sm); border: none; background: var(--accent); color: white; font-weight: 700; cursor: pointer; font-family: var(--font); }
+.rc-guard button { padding: 10px 24px; border-radius: var(--radius-sm); border: none; background: var(--grad-1); color: white; font-weight: 700; cursor: pointer; font-family: var(--font); }
 
-.rc-title    { color: var(--text-heading); font-size: 30px; font-weight: 800; margin: 40px 0 8px; letter-spacing: -0.5px; }
-.rc-subtitle { color: var(--text-muted); font-size: 14px; margin-bottom: 28px; }
+.rc-hero { background: var(--grad-hero); border-bottom: 1px solid var(--border); padding: 48px 24px; text-align: center; position: relative; overflow: hidden; }
+.rc-hero::before { content: ""; position: absolute; width: 600px; height: 300px; background: radial-gradient(ellipse, rgba(139,92,246,0.18) 0%, transparent 70%); top: -80px; left: 50%; transform: translateX(-50%); pointer-events: none; }
+.rc-hero-badge { display: inline-block; background: rgba(139,92,246,0.12); border: 1px solid rgba(139,92,246,0.25); color: var(--accent); font-size: 12px; font-weight: 700; padding: 5px 16px; border-radius: 999px; margin-bottom: 14px; position: relative; z-index: 1; }
+.rc-title    { color: var(--text-heading); font-size: 34px; font-weight: 900; margin: 0 0 10px; letter-spacing: -1px; position: relative; z-index: 1; }
+.rc-subtitle { color: var(--text-muted); font-size: 15px; margin-bottom: 0; position: relative; z-index: 1; }
 
 .rc-stats-bar { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 36px; padding: 0 20px; }
 .rc-stat { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 24px; display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 100px; transition: border-color 0.2s, transform 0.2s; }

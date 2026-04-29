@@ -2,13 +2,13 @@
 .dsa-guard { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; background: var(--bg); font-size: 16px; color: var(--text); }
 .dsa-guard button { padding: 10px 24px; border-radius: var(--radius-sm); border: none; background: var(--accent-purple); color: white; font-weight: 700; cursor: pointer; font-family: var(--font); }
 
-.dsa-hero { background: linear-gradient(135deg, #4f46e5 0%, #6d28d9 55%, #7c3aed 100%); padding: 56px 24px; text-align: center; position: relative; overflow: hidden; }
-.dsa-hero::before { content: ""; position: absolute; width: 500px; height: 500px; border-radius: 50%; background: rgba(255,255,255,0.04); top: -200px; right: -100px; pointer-events: none; }
-.dsa-hero-badge { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: white; font-size: 12px; font-weight: 600; padding: 5px 16px; border-radius: 999px; margin-bottom: 14px; }
-.dsa-hero h1 { font-size: 32px; font-weight: 800; color: white; margin: 0 0 10px; letter-spacing: -0.5px; }
-.dsa-hero p  { font-size: 14px; color: rgba(255,255,255,0.8); margin: 0 0 20px; }
-.dsa-hero-stats { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
-.dsa-hero-stats span { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 6px 16px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+.dsa-hero { background: var(--grad-hero); border-bottom: 1px solid var(--border); padding: 56px 24px; text-align: center; position: relative; overflow: hidden; }
+.dsa-hero::before { content: ""; position: absolute; width: 600px; height: 300px; border-radius: 50%; background: radial-gradient(ellipse, rgba(139,92,246,0.18) 0%, transparent 70%); top: -80px; left: 50%; transform: translateX(-50%); pointer-events: none; }
+.dsa-hero-badge { display: inline-block; background: rgba(139,92,246,0.12); border: 1px solid rgba(139,92,246,0.25); color: var(--accent); font-size: 12px; font-weight: 700; padding: 5px 16px; border-radius: 999px; margin-bottom: 14px; position: relative; z-index: 1; }
+.dsa-hero h1 { font-size: 34px; font-weight: 900; color: var(--text-heading); margin: 0 0 10px; letter-spacing: -1px; position: relative; z-index: 1; }
+.dsa-hero p  { font-size: 15px; color: var(--text-muted); margin: 0 0 20px; position: relative; z-index: 1; }
+.dsa-hero-stats { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; position: relative; z-index: 1; }
+.dsa-hero-stats span { background: var(--bg-hover); border: 1px solid var(--border); color: var(--text); padding: 6px 16px; border-radius: 999px; font-size: 13px; font-weight: 500; }
 
 .dsa-body { max-width: 860px; margin: 0 auto; padding: 32px 24px 60px; }
 .dsa-section-label { font-size: 14px; font-weight: 700; color: var(--accent-purple); margin: 28px 0 12px; }

@@ -10,10 +10,10 @@ const resources = [
     desc: "Master every round with proven strategies, do's & don'ts, and a day-of checklist.",
     path: "/resources/interview-tips",
     tag: "Most Popular",
-    tagColor: "#16a34a",
-    tagBg: "#dcfce7",
+    tagColor: "var(--accent-green)",
+    tagBg: "rgba(16,185,129,0.12)",
     details: ["20+ Tips", "4 Categories", "Do's & Don'ts", "Day Checklist"],
-    color: "#16a34a",
+    color: "var(--accent-green)",
   },
   {
     icon: "💡",
@@ -21,10 +21,10 @@ const resources = [
     desc: "Topic-wise practice with interactive quizzes covering Quant, Logical, Verbal & Technical.",
     path: "/resources/aptitude",
     tag: "Interactive",
-    tagColor: "#ea580c",
-    tagBg: "#ffedd5",
+    tagColor: "var(--accent-orange)",
+    tagBg: "rgba(245,158,11,0.12)",
     details: ["4 Topics", "Sample Quiz", "Explanations", "Study Tips"],
-    color: "#ea580c",
+    color: "var(--accent-orange)",
   },
   {
     icon: "🧠",
@@ -32,10 +32,10 @@ const resources = [
     desc: "A structured 12-week plan to master Data Structures & Algorithms with checkable progress.",
     path: "/resources/dsa",
     tag: "Structured",
-    tagColor: "#6366f1",
-    tagBg: "#ede9fe",
+    tagColor: "var(--accent)",
+    tagBg: "rgba(139,92,246,0.12)",
     details: ["12 Weeks", "4 Phases", "16 Topics", "300+ Problems"],
-    color: "#6366f1",
+    color: "var(--accent)",
   },
   {
     icon: "📖",
@@ -43,10 +43,10 @@ const resources = [
     desc: "Round-wise breakdown, focus areas, and insider tips for TCS, Infosys, Amazon & more.",
     path: "/resources/companies",
     tag: "Company-wise",
-    tagColor: "#1d4ed8",
-    tagBg: "#dbeafe",
+    tagColor: "var(--accent-blue)",
+    tagBg: "rgba(59,130,246,0.12)",
     details: ["6 Companies", "Round Breakdown", "Focus Areas", "Pro Tips"],
-    color: "#1d4ed8",
+    color: "var(--accent-blue)",
   },
   {
     icon: "🎯",
@@ -54,10 +54,10 @@ const resources = [
     desc: "16 most-asked placement questions answered clearly — prep to salary negotiation.",
     path: "/resources/faqs",
     tag: "Quick Read",
-    tagColor: "#0d9488",
-    tagBg: "#ccfbf1",
+    tagColor: "var(--accent-cyan)",
+    tagBg: "rgba(6,182,212,0.12)",
     details: ["16 FAQs", "4 Categories", "Expert Answers", "Community CTA"],
-    color: "#0d9488",
+    color: "var(--accent-cyan)",
   },
 ];
 
@@ -75,9 +75,12 @@ const Resources = ({ form }) => {
     <div className="rc-page">
       <Navbar form={form} onLogout={() => navigate("/home")} onProfileClick={() => navigate("/profile")} />
 
-      {/* Title */}
-      <h1 className="rc-title">📚 Resource Center</h1>
-      <p className="rc-subtitle">Everything you need to crack placements — all in one place</p>
+      {/* Hero */}
+      <div className="rc-hero">
+        <div className="rc-hero-badge">📚 Resources</div>
+        <h1 className="rc-title">Resource Center</h1>
+        <p className="rc-subtitle">Everything you need to crack placements — all in one place</p>
+      </div>
 
       {/* Stats Bar */}
       <div className="rc-stats-bar">
