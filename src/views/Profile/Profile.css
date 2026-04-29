@@ -69,6 +69,11 @@
   gap: 8px;
 }
 
+.pp-avatar-wrap {
+  position: relative;
+  margin-bottom: 4px;
+}
+
 .pp-avatar {
   width: 72px;
   height: 72px;
@@ -81,7 +86,34 @@
   align-items: center;
   justify-content: center;
   box-shadow: 0 0 0 3px var(--bg), 0 0 0 5px #58a6ff44;
-  margin-bottom: 4px;
+}
+
+.pp-avatar-img {
+  object-fit: cover;
+  background: var(--bg-hover);
+}
+
+.pp-photo-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--grad-1);
+  border: 2px solid var(--bg-card);
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 2px 8px rgba(139,92,246,0.4);
+}
+.pp-photo-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(139,92,246,0.6);
 }
 
 .pp-name {
